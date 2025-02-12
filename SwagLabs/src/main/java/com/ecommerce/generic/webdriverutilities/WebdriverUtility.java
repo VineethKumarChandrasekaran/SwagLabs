@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * @author Gaurav Singh
+ * @author Vineeth Kumar C
  */
 
 public class WebdriverUtility {

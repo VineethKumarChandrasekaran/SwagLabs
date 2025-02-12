@@ -1,5 +1,7 @@
 package com.ecommerce.objectrepository;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,5 +49,11 @@ public class CheckOutPage {
 
 	public WebElement getContinueButton() {
 		return continueButton;
+	}
+	
+	public void checkout(String firstname, String lastname, String zipcode) throws IOException {
+		getFirstnameTextfield().sendKeys(firstname);
+		getLastnameTextfield().sendKeys(lastname);
+		getPostalTextfield().sendKeys(zipcode);
 	}
 }

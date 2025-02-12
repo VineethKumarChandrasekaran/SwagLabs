@@ -1,5 +1,7 @@
 package com.ecommerce.objectrepository;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,11 +33,14 @@ public class CartPage {
 	@FindBy(id = "continue-shopping")
 	private WebElement continueshoppingButton;
 	
-	@FindBy(id = "checkout")
+	@FindBy(xpath = "//button[@id='checkout']")
 	private WebElement checkoutButton;
 	
 	@FindBy(className = "shopping_cart_badge")
 	private WebElement cartitemcount;
+	
+	@FindBy(xpath = "//div[@data-test='item-quantity']")
+	private List<WebElement> itemcount;
 	
 	public CartPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -75,5 +80,9 @@ public class CartPage {
 
 	public WebElement getCartitemcount() {
 		return cartitemcount;
+	}
+
+	public List<WebElement> getItemcount() {
+		return itemcount;
 	}
 }

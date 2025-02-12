@@ -23,8 +23,8 @@ public class LoginTest extends BaseClass {
     @DataProvider(name = "loginData")
     public Object[][] getLoginData() throws EncryptedDocumentException, IOException {
         int rowCount = excelutility.getRowCount("Login"); // Dynamically get row count
-        Object[][] data = new Object[rowCount - 1][2]; // Exclude header row
-        for (int i = 1; i < rowCount; i++) {
+        Object[][] data = new Object[rowCount][2]; // Exclude header row
+        for (int i = 1; i <rowCount; i++) {
             data[i-1][0] = excelutility.getDataFromExcel("Login", i, 0); // Username
             data[i-1][1] = excelutility.getDataFromExcel("Login", i, 1); // Password
         }
